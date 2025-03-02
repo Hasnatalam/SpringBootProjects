@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: ClientDemoApp
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database
+    username: root
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+user:
+  name: Hasnat Alam
+  city: Ameerpet,Hyderabad
+  pin: 500036
+  phno: 1234567890
+  basicSalary: 50000
+  epf: 10000
+  active: true
+
+  servers:
+    - server1
+    - server2
+    - server3
+
+  database:
+    urls:
+      primary: jdbc:mysql://localhost:3306/mydb
+      secondary: jdbc:mysql://localhost:3306/backupdb
+
+  citys:
+    - Kolkata
+    - Mumbai
+    - Hyderabad
+
+  idDetails:
+    aadharNo: 123456789012349
+    voterID: ABC65678901234
+    panNo: ABCDE1234F
