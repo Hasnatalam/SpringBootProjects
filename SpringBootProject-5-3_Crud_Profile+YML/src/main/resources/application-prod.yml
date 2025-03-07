@@ -1,0 +1,12 @@
+# DataSource Configuration (Oracle)
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: hasnat
+
+    # HikariCP Connection Pool Configuration
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 10

@@ -1,0 +1,6 @@
+#spring:
+# application:
+#  name: SpringBootProject-5_Crud_Profile
+#
+# profiles:
+#  active: prod

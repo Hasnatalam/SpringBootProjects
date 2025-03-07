@@ -1,0 +1,17 @@
+# DataSource Configuration (MySQL)
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///my_database
+    username: root
+    password: Hasnat@2516
+
+    # C3P0 Connection Pooling Configuration
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+#    c3p0:
+#      min-size: 10
+#      max-size: 100
+#      acquire-increment: 5
+#      max-statements: 50
+#      idle-test-period: 3000
+#      timeout: 1800
