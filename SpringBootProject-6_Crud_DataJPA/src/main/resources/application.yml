@@ -1,0 +1,16 @@
+spring:
+ application:
+  name: SpringBootProject-6_Crud_DataJPA
+#jdbc properties(Oracle)
+ datasource:
+  driver-class-name: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1521:XE
+  username: system
+  password: hasnat
+#Hibernate specific Jpa properties
+ jpa:
+  database-platform: org.hibernate.dialect.OracleDialect
+  show-sql: true
+  hibernate:
+   ddl-auto: update
+        
