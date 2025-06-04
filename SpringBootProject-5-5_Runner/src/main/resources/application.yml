@@ -1,0 +1,82 @@
+spring:
+  application:
+    name: SpringBootProject-5_Crud_Profile
+  profiles:
+    active: test  # Change the active profile here or use -Dspring.profiles.active=<profile>
+
+---
+# DataSource Configuration for MySQL (DBCP2) - Dev Profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///my_database
+    username: root
+    password: Hasnat@2516
+
+    # Apache DBCP2 Connection Pool Configuration
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+      max-total: 100
+      initial-size: 10
+      # max-conn-lifetime-millis: 100000
+
+---
+# DataSource Configuration for Oracle (HikariCP) - Prod Profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: hasnat
+
+    # HikariCP Connection Pool Configuration
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 10
+
+---
+# DataSource Configuration for MySQL (C3P0) - Test Profile
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///my_database
+    username: root
+    password: Hasnat@2516
+
+    # C3P0 Connection Pool Configuration
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+#    c3p0:
+#      min-size: 10
+#      max-size: 100
+#      acquire-increment: 5
+#      max-statements: 50
+#      idle-test-period: 3000
+#      timeout: 1800
+
+---
+# DataSource Configuration for Oracle (UCP) - UAT Profile
+spring:
+  config:
+    activate:
+      on-profile: uat
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: hasnat
+
+    # Oracle UCP Connection Pool Configuration
+    type: oracle.ucp.jdbc.PoolDataSourceImpl
+    oracleucp:
+      max-pool-size: 100
+      min-pool-size: 10
+      time-to-live-connection-timeout: 100000
